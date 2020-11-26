@@ -53,7 +53,7 @@ export class Store {
   }
 
   dispatch(type, payload) {
-    for (const reducer of this.reducers) {
+    for (const reducer of this.config.reducers) {
       if (reducer.type === type) {
         if (typeof reducer.action === "function") {
           this.data = reducer.action(this.data, payload);

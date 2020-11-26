@@ -17,7 +17,7 @@ export function withStore(storeName, fill) {
       }
 
       handleStoreUpdate(data) {
-        this.setState(data);
+        this.setState({data});
       }
 
       componentDidMount() {

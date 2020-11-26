@@ -31,7 +31,7 @@ const ProductsStore = new Store("products", {
       action(state, payload) {
         const { id } = payload;
 
-        const products = [...state.product];
+        const products = [...state.products];
         const index = products.findIndex((product) => product.id === id);
 
         if (index !== -1) {
