@@ -1,7 +1,7 @@
 import React from "react";
 import "./product.scss";
 
-export class Product extends React.Component {
+export default class Product extends React.Component {
   render() {
     const { product } = this.props;
     const price = product.price.toLocaleString("ru", {
