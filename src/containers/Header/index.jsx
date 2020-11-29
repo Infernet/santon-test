@@ -9,6 +9,8 @@ class Header extends React.Component {
 
         this.closeModal = this.closeModal.bind(this);
         this.openModal = this.openModal.bind(this);
+        this.login = this.login.bind(this);
+        this.logout = this.logout.bind(this);
     }
 
 
@@ -20,24 +22,51 @@ class Header extends React.Component {
         this.setState({isModalActive: true});
     }
 
+    login({login, password}) {
+        if (login && password)
+            this.props.loginAction(login, password, this.closeModal);
+    }
+
+    logout() {
+        this.props.logoutAction();
+    }
+
     render() {
         const {isModalActive} = this.state;
-        const {openModal, closeModal} = this;
+        const {login, isAuth} = this.props;
 
         return (
             <header className="header">
                 <div className="header__wrapper">
-                    <p className="header__title">Список товаров</p>
+                    <div className="header__content">
+                        <h1 className="header__title">Список товаров</h1>
+                    </div>
+                    <div className="header__content">
+                        {isAuth ? (
+                            <>
+                                <p className="header__text">Добро пожаловать, {login}</p>
+                                <button
+                                    type="button"
+                                    className="button button_secondary"
+                                    onClick={this.logout}>
+                                    Выход
+                                </button>
+                            </>
+                        ) : (<button
+                                type="button"
+                                className="button button_primary"
+                                onClick={this.openModal}
+                            >
+                                Авторизоваться
+                            </button>
+                        )}
+                    </div>
                 </div>
-                <div className="header__wrapper">
-                    <button
-                        type="button" className="button button_primary" onClick={openModal}>Авторизация
-                    </button>
-                    <button
-                        type="button" className="button button_secondary">Выход
-                    </button>
-                </div>
-                {isModalActive && <LoginModal closeModal={closeModal}/>}
+                {isModalActive &&
+                <LoginModal
+                    closeModal={this.closeModal}
+                    loginAction={this.login}
+                />}
             </header>
         );
     }

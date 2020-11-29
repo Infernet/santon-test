@@ -3,6 +3,7 @@ import ProductList from './productList';
 import Product from './product';
 import AddProductModal from './addProductModal';
 import LoginModal from './loginModal';
+import CustomInput from './customInput';
 
 export {
     Modal,
@@ -10,4 +11,5 @@ export {
     ProductList,
     AddProductModal,
     LoginModal,
-}
+    CustomInput
+};

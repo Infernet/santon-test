@@ -4,21 +4,44 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  background-color: #5a6268;
 
 
   &__wrapper {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__content {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-right: auto;
+
+    &:last-child {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+
+  &__text {
+    font: {
+      family: 'Roboto', sans-serif;
+      weight: 500;
+      size: 16px;
+    }
+    color: #ffffff;
+    margin-right: 15px;
   }
 
   &__title {
     font: {
       family: 'Roboto', sans-serif;
-      weight: 600;
-      size: 18px;
     }
-    line-height: 18px;
-    color: teal;
+    color: #ffffff;
   }
 }

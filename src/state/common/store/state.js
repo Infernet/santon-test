@@ -1,3 +1,5 @@
+import {DEFAULT_IMAGE_URL} from '../../../constant';
+
 export const state = {
   products: {
     products: [
@@ -7,6 +9,7 @@ export const state = {
         description:
           "Игрушка Король. Возвраст 5+. Материал плюш. Страна производства - Болгария",
         price: 11990,
+        image:DEFAULT_IMAGE_URL,
       },
       {
         id: 63479,
@@ -14,6 +17,7 @@ export const state = {
         description:
           "Игрушка Король. Возвраст 5+. Материал плюш. Страна производства - Болгария",
         price: 18990,
+        image:DEFAULT_IMAGE_URL,
       },
       {
         id: 45018,
@@ -21,6 +25,7 @@ export const state = {
         description:
           "Игрушка Король. Возвраст 5+. Материал плюш. Страна производства - Болгария",
         price: 1400,
+        image:DEFAULT_IMAGE_URL,
       },
     ],
   },

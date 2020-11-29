@@ -1,5 +1,6 @@
 import { Store } from "../common/store/store";
 import { Registry } from "../common/store/registry";
+import {DEFAULT_IMAGE_URL} from '../../constant';
 
 export const ADD_PRODUCT = "ADD_PRODUCT";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
@@ -15,11 +16,16 @@ const ProductsStore = new Store("products", {
   reducers: [
     {
       type: ADD_PRODUCT,
-      action(state, payload) {
-        const { product } = payload;
+      action(state, {product:{description,imageLink,...rest},callback}) {
+        const data={
+          description:description!==null?description:'',
+          image:imageLink!==null?imageLink:DEFAULT_IMAGE_URL,
+          ...rest
+        }
 
-        const products = [...state.products, product];
-
+        const products = [...state.products, data];
+        if(typeof callback ==='function')
+          callback();
         return {
           ...state,
           products,

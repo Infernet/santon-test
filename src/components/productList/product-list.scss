@@ -1,9 +1,22 @@
 .product-list {
   width: 100%;
-  max-width: 800px;
+  height: 100%;
+  max-width: 1000px;
   margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
-  & > .product {
-    margin-bottom: 24px;
+
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 15px 0 15px 25px;
+    overflow-y: auto;
+  }
+
+  &__controls {
+    display: flex;
+    width: 100%;
   }
 }

@@ -1,39 +1,75 @@
 .product {
   display: flex;
-  flex-flow: row nowrap;
-  width: 100%;
-  padding: 16px;
-  border: 1px solid black;
-  border-radius: 4px;
-  box-shadow: 0px 3px rgba($color: #000000, $alpha: 0.1);
+  flex-flow: column nowrap;
+  width: 250px;
+  height: 350px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 3px 7px 3px #3a3a3a;
+  background-color: #7B7B7B;
+  overflow-x: hidden;
+  overflow-y: auto;
 
-  &-info {
-    width: 100%;
-
-    &-title {
-      margin-bottom: 12px;
-      font-size: 24px;
-    }
-
-    &-description {
-      margin-bottom: 8px;
-      font-size: 16px;
-    }
-
-    &-price {
-      font-size: 20px;
-      font-weight: bold;
-    }
+  &:last-child {
+    margin-bottom: 0;;
   }
 
-  &-image-frame {
-    width: 320px;
-    height: 100%;
+  &__title {
+    font: {
+      family: 'Roboto', sans-serif;
+      weight: 500;
+      size: 14px;
+    }
+    color: #fefefe;
+    margin: 0 0 12px 0;
+    font-size: 24px;
   }
 
-  &-image {
+  &__image-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
     width: 100%;
+  }
+
+  &__image {
+    width: 200px;
     height: 100%;
     object-fit: cover;
+    border-radius: 5px;
   }
+
+
+  &__description {
+    font: {
+      family: 'Roboto', sans-serif;
+      weight: 400;
+      size: 14px;
+    }
+    color: #fefefe;
+    text-align: justify;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  &__price {
+    display: block;
+    font:{
+      family: 'Roboto', sans-serif;
+      size: 17px;
+      weight: 700;
+    }
+    color: #fefefe;
+  }
+
+
 }
